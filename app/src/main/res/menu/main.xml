@@ -1,9 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <item
-        android:id="@+id/action_settings"
-        android:orderInCategory="100"
-        android:title="@string/action_settings"
-        app:showAsAction="never" />
+
+
+        <item
+            android:id="@+id/nav_profile"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Profile" />
+        <item
+            android:id="@+id/nav_gallery"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="Accueil" />
+        <item
+            android:id="@+id/nav_product"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Nouveau Produit" />
+        <item
+            android:id="@+id/nav_offers"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Mes Produits" />
+        <item
+            android:id="@+id/nav_orders"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Changer de langues" />
+        <item
+            android:id="@+id/nav_newProducts"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="A propos de nous" />
+        <item
+            android:id="@+id/nav_myCarts"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Mon Panier" />
+
+
 </menu>

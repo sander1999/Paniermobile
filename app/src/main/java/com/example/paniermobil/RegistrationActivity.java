@@ -22,7 +22,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class RegistrationActivity extends AppCompatActivity {
 
     Button signUp;
-    EditText name, email, password;
+    EditText firstName,lastName, email, password;
     TextView signIn;
 
     FirebaseAuth auth;
@@ -38,7 +38,8 @@ public class RegistrationActivity extends AppCompatActivity {
         database = FirebaseDatabase.getInstance();
 
         signUp = findViewById(R.id.reg_btn);
-        name = findViewById(R.id.name_reg);
+        firstName = findViewById(R.id.name_reg);
+        lastName = findViewById(R.id.name1_reg);
         email = findViewById(R.id.email_reg);
         password = findViewById(R.id.passeword_reg);
         signIn = findViewById(R.id.sign_in);
@@ -60,11 +61,16 @@ public class RegistrationActivity extends AppCompatActivity {
     }
 
     private void createUser() {
-        String userName = name.getText().toString();
+        String userfirstName = firstName.getText().toString();
+        String userlastName = lastName.getText().toString();
         String userEmail = email.getText().toString();
         String userPassword = password.getText().toString();
 
-        if (TextUtils.isEmpty(userName)) {
+        if (TextUtils.isEmpty(userfirstName)) {
+            Toast.makeText(this, "le prénom est vide!", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if (TextUtils.isEmpty(userlastName)) {
             Toast.makeText(this, "le nom est vide!", Toast.LENGTH_SHORT).show();
             return;
         }
@@ -88,7 +94,7 @@ public class RegistrationActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()){
 
-                            UserModel userModel = new UserModel(userName,userEmail,userPassword);
+                            UserModel userModel = new UserModel(userfirstName,userEmail,userPassword);
                             String id = task.getResult().getUser().getUid();
                             database.getReference().child("Admin").child(id).setValue(userModel);
 
