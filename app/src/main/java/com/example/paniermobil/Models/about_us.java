@@ -13,4 +13,9 @@ public class about_us extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about_us);
     }
+
+//    Uri uri = Uri.parse("http://www.google.com"); // missing 'http://' will cause crashed
+//    Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+//    startActivity(intent);
+
 }

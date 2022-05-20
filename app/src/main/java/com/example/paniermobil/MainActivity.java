@@ -9,6 +9,7 @@ import android.view.Menu;
 import android.widget.Toast;
 
 import com.example.paniermobil.Models.User_Profile;
+import com.example.paniermobil.Models.about_us;
 import com.example.paniermobil.Models.new_product;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
@@ -73,6 +74,10 @@ public class MainActivity extends AppCompatActivity {
             case R.id.nav_product:
                 Toast.makeText(this, "Nouveau Produit", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(MainActivity.this, new_product.class));
+                return true;
+            case R.id.nav_about:
+                Toast.makeText(this, "A Propos de nous", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(MainActivity.this, about_us.class));
                 return true;
         }
         return super.onOptionsItemSelected(item);
