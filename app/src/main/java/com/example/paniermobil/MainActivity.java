@@ -1,9 +1,15 @@
 package com.example.paniermobil;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
+import android.widget.Toast;
 
+import com.example.paniermobil.Models.User_Profile;
+import com.example.paniermobil.Models.new_product;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
@@ -51,9 +57,25 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
+        //getMenuInflater().inflate(R.menu.main_menu,menu);
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.main, menu);
         return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.nav_profile:
+                Toast.makeText(this, "Profile", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(MainActivity.this, User_Profile.class));
+                return true;
+            case R.id.nav_product:
+                Toast.makeText(this, "Nouveau Produit", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(MainActivity.this, new_product.class));
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     @Override
