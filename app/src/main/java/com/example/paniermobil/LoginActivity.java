@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.paniermobil.Models.new_product;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -74,7 +75,7 @@ public class LoginActivity extends AppCompatActivity {
 
                         if (task.isSuccessful()){
                             Toast.makeText(LoginActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(LoginActivity.this,MainActivity.class));
+                            startActivity(new Intent(LoginActivity.this, new_product.class));
                         }else{
                             Toast.makeText(LoginActivity.this, "Error: "+task.getException(), Toast.LENGTH_SHORT).show();
                         }
