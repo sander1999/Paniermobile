@@ -11,10 +11,18 @@
         android:theme="@style/Theme.Paniermobil">
         <activity
             android:name=".Models.about_us"
-            android:exported="false" />
+            android:exported="true" >
+
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+7
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+    </activity>
         <activity
             android:name=".Models.new_product"
             android:exported="false" />
+
         <activity
             android:name=".Models.User_Profile"
             android:exported="false" />
@@ -29,11 +37,8 @@
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.Paniermobil.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+
         </activity>
     </application>
 

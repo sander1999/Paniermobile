@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,90 +7,109 @@
     tools:context=".Models.about_us">
 
     <TextView
-        android:id="@+id/Bio"
+        android:id="@+id/bio"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="20dp"
+        android:text="We are students in computer Science, Espoir University at Calvary Chapel based at Port-au-Prince, Petion-Ville. Our mainly interest is in the Software developement field. We are proud to represent haiti in the tech world."
+        app:layout_constraintTop_toTopOf="parent"
         android:gravity="center"
-        android:text="Nous sommes des étudiants en science Informatique de l'université Espoir de Calvary Chapel. Nous evoluons dans le domaine du développement de logiciels. Nous avons une vision pour le changement locale. Nous aimerions créer une place pour Haïti dans le domaine du développement de logiciels. "
+        android:layout_margin="20dp"
         android:textColor="@color/purple_500"
-        android:textSize="22sp" />
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/member_tag"/>
 
     <TextView
-        android:layout_width="match_parent"
+        android:id="@+id/member_tag"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/Bio"
-        android:layout_marginBottom="20dp"
-        android:gravity="center"
-        android:text="Membre de l'equipe"
+        app:layout_constraintTop_toBottomOf="@+id/bio"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Team Member"
         android:textColor="@color/purple_500"
-        android:textSize="25sp"
-
-        android:textStyle="bold" />
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/claudio_image"
+        />
 
     <ImageView
-        android:layout_width="180dp"
+        android:id="@+id/claudio_image"
+        android:layout_width="200dp"
         android:layout_height="150dp"
-        android:layout_gravity="center"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/sander_image"
+        app:layout_constraintTop_toBottomOf="@id/member_tag"
+        app:srcCompat="@drawable/claudio"
+        app:layout_constraintBottom_toTopOf="@id/claudio_tag"/>
+
+    <ImageView
+        android:id="@+id/sander_image"
+        android:layout_width="200dp"
+        android:layout_height="150dp"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="310dp"
+        android:layout_marginRight="20dp"
+        app:layout_constraintStart_toEndOf="@id/claudio_image"
+        app:layout_constraintTop_toBottomOf="@id/member_tag"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/sander_tag"
         app:srcCompat="@drawable/claudio" />
 
-    <ImageView
-        android:layout_width="180dp"
-        android:layout_height="150dp"
-        android:layout_marginLeft="200dp"
-        android:layout_marginTop="310dp" />
-
     <TextView
+        android:id="@+id/claudio_tag"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="450dp"
-        android:layout_marginBottom="20dp"
-        android:gravity="left"
+        app:layout_constraintTop_toBottomOf="@+id/claudio_image"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/sander_tag"
+
         android:text="Claudio Terogene"
         android:textColor="@color/purple_500"
-        android:textSize="25sp"
-
-        android:textStyle="bold" />
+        android:textSize="20dp"
+        android:textStyle="bold"
+        />
 
     <TextView
+        android:id="@+id/sander_tag"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="220dp"
-        android:layout_marginTop="450dp"
-        android:layout_marginBottom="20dp"
-        android:gravity="right"
         android:text="Sander Seide"
         android:textColor="@color/purple_500"
-        android:textSize="25sp"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/claudio_tag"
+        app:layout_constraintTop_toBottomOf="@+id/sander_image" />
 
-        android:textStyle="bold" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="490dp"
-        android:layout_marginBottom="20dp"
-        android:gravity="center"
-        android:text="Informaticien\nDevelopeur logiciel \nWordpress designer"
-        android:textColor="@color/purple_500"
-        android:textSize="25sp" />
 
     <TextView
+        android:id="@+id/claudio_Description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="240dp"
-        android:layout_marginTop="490dp"
-        android:layout_marginBottom="20dp"
+        android:text="Software Developer\nWordpress Designer"
+        app:layout_constraintTop_toBottomOf="@id/claudio_tag"
         android:gravity="center"
-        android:text="Informaticien \n Gestionnaire"
         android:textColor="@color/purple_500"
-        android:textSize="25sp" />
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@id/sander_Description"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
-</RelativeLayout>
+    <TextView
+        android:id="@+id/sander_Description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Informaticien\nGestionnaire"
+        app:layout_constraintTop_toBottomOf="@id/claudio_tag"
+        android:gravity="center"
+        android:textColor="@color/purple_500"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/claudio_Description"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
